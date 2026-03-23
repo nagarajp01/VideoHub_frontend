@@ -15,6 +15,7 @@ function Login() {
     const navigate=useNavigate()
 
     const login= async(data)=>{
+        // const formData=new FormData()
         setError("")
         try {
             const session=await api.post("/users/login",data)
@@ -36,7 +37,7 @@ function Login() {
   return (
     <div className='loginContainer'>
         <div className="logoWrap">
-            <span><Logo /></span>
+            {/* <span><Logo /></span> */}
         </div>
         <h2>Sign into your account</h2>
         <p>Dont have an account <Link to="/signup" >SignUp</Link></p>
