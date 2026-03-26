@@ -21,7 +21,7 @@ function Signup() {
             formData.append("password",data.password)
             formData.append("email",data.email)
             formData.append("avatar",data.avatar[0])
-            formData.append("coverImg",data.cover[0])
+            formData.append("coverImage",data.cover[0])
             const response=await api.post("/users/register",formData)
                 await api.post("/users/login",{
                 email:data.email,
@@ -75,7 +75,7 @@ function Signup() {
                 })
             }/>
             <Input className="coverInput" type="file" label="cover image" {
-                ...register("cover",{
+                ...register("coverImage",{
                     required:true
                 })
             } />

@@ -20,6 +20,8 @@ function Login() {
         try {
             const session=await api.post("/users/login",data)
             if(session){
+                const token = session.data.data.accessToken
+                localStorage.setItem("token", token)
                 const userData=await api.get("/users/current-user")
                 if(userData){
                     dispatch(authLogin({userData:userData.data.data}))
